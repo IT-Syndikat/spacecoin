@@ -2,8 +2,8 @@
 
 ** Concept
 
-Coins and cash are annoying, let's replace them by crypto. In this case a very
-simple system with a central authority, namely our vending machine.
+Coins and cash are an irritation, better use some computation. In this case a
+very simple system with a central authority, namely our vending machine.
 
 We have a vending machine with a coin acceptor and dispenser. We would like to
 extend this system with a bill accpetor and a (reloadable) token system. The
