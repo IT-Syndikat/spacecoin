@@ -1,0 +1,39 @@
+* SpaceCoin
+
+** Concept
+
+Coins and cash are annoying, let's replace them by crypto. In this case a very
+simple system with a central authority, namely our vending machine.
+
+We have a vending machine with a coin acceptor and dispenser. We would like to
+extend this system with a bill accpetor and a (reloadable) token system. The
+system as a whole should also be able to simply change bills into coins for
+those who are afraid of token systems' designers' incompetence.
+
+*** Hardware
+
+We did some reseach and performed some experiments with a few different coin
+acceptors and they all seem to have a very simmilar (electrical) interface. In
+order to be as flexible as possible the output side of the interface consists of
+pins with deliver simple pulses at full operating voltage (12, 24V or more)
+multiple of such "channels" as they call them exist on each device. Each channel
+is associated with a certain monetary ammount (0.50€, 2€ or what have you).
+
+The input side consists of pins which are meant to be driven by an open
+collector (or drain) arrangement. That is the acceptor embeds a pullup with one
+end connected to it's preferred logic operating voltage and the other connected
+to it's internal logic and the external input pin which we control.
+
+We do not possess the datasheets for any of the coin acceptors we have, however
+for the bill acceptor destined to be used in this project we do have
+documentation (to be found in the ~doc/~ directory).
+
+From this documentation we can accetain that the bill acceptor ought to not be
+much different in the manner in which we interface with it. Howerver due to a
+shortage of pins on the microcontrollers we have handy and would use in this
+project we opt to use a second, rather different and less pin lusty, interface
+which this device also provides. The aforementioned interface is known under the
+name ccTalk and is in essence merely an asyncrounous half-duplex serial
+interface easily produced with a duo of transistors a hand full of resistors and
+the universal asynchronous receiver/transmitter peripheral of our
+microcontroller.
