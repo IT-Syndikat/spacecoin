@@ -1,0 +1,5 @@
+*.bak
+*.bck
+*.kicad_pcb-bak
+*.FCStd[0-9]
+*~
